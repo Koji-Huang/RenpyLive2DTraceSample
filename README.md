@@ -4,7 +4,13 @@
 
 >   这个项目里包含了通过  Pymouth 脚本, OpenSeeFace 软件来实现 Renpy 动作追踪的示例, 实现的思路是在 Pymouth, OpenSeeFace 处理好动作数据后通过端口通信将数据重新映射到 Renpy 的 Live2D 组件上
 >
->   如果你不明白为什么这些代码能让动作作用在模型上生效的话, 可以去看看我写的一篇 Markdown - 自定义 Live2D 组件动作的一些思路. 这个 Markdown 在我的另一个仓库 KojiRenpyBox 的 Markdown 文件夹里
+>   如果你不明白为什么这些代码能让动作作用在模型上生效的话, 可以去看看我写的另一篇 Markdown - 自定义 Live2D 组件动作的一些思路. 这个 Markdown 在我的另一个仓库 KojiRenpyBox 的 Markdown 文件夹里
+>
+>   这个项目里直接包含有的外部资源有:
+>
+>   >   Live2D 官方的 "虹色Mao" 模型: https://www.live2d.com/zh-CHS/learn/sample/
+>   >
+>   >   OpenSeeFace 软件本体: https://github.com/emilianavt/OpenSeeFace/releases/tag/v1.20.4
 
 ---
 
@@ -14,7 +20,7 @@
 
 ### Pymouth
 
->   pymouth 是一个 python 第三方库, 作用是将声音数据转换为 Live2D 模型通用的日语口型参数, 即使我认为 pymouth 的口型追踪并没有达到完美无缺的地步, 但作为一个示例项目来说绝对够用了, 项目地址: https://github.com/organics2016/pymouth
+>   pymouth 是一个 python 第三方库, 作用是将声音数据转换为 Live2D 模型通用的日语口型参数, 即使我认为 pymouth 的口型追踪并没有达到完美无缺的地步, 但作为一个示例项目来说绝对够用了, 项目地址: 
 >
 >   如何调用 pymouth 并发送到端口上:
 >
@@ -58,7 +64,7 @@
 
 ### OpenSeeFace
 
->   OpenSeeFace 是一个脸型追踪工具, 我们需要借用这个库来帮我们生成脸型追踪数据, 项目地址: https://github.com/emilianavt/OpenSeeFace
+>   OpenSeeFace 是一个脸型追踪工具, 我们需要借用这个库来帮我们生成脸型追踪数据
 >
 >   我已经在项目里塞进了一整个 OpenSeeFace 包, 为的是确保 OpenSeeFace 的版本与我写的代码兼容, 如何使用 OpenSeeFace 就请参照 OpenSeeFace 的文档了
 >
@@ -127,3 +133,13 @@
 >   然后在对 OpenSee.cs 一番 Ctrl CV 与修改后, 这个兼容就完成了
 >
 >   需要注意的是, OpenSee.cs 里有两个参数 rightGaze 和 leftGaze 是算出来的, 他们并不是通过 UDP 发送出来的, 这两个参数的算法涉及到一些我无法解决的数学知识, 所以我也就没写了, 其他的所有参数我都写好了兼容, 在 `osf_update_socket` 函数里
+
+---
+
+## 相关链接:
+
+pymouth 库:  https://github.com/organics2016/pymouth
+
+OpenSeeFace 库: https://github.com/emilianavt/OpenSeeFace
+
+Live2D 模型: https://www.live2d.com/zh-CHS/learn/sample/
