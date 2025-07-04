@@ -1,12 +1,15 @@
 ﻿
-
+# OSF 追踪
 image mao = Live2D("mao_pro", update_function=osf_update_function)
+
+# Pymouth 追踪
+# image mao = Live2D("mao_pro", update_function=pymouth_update_function)
 
 
 label start:
 
     show mao
-    "显示人物"
+    "..."
 
     return
 

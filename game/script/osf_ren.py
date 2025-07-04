@@ -189,4 +189,4 @@ def osf_update_function(obj, st):
 
 
 osf_thread = threading.Thread(target=osf_update_socket)
-osf_thread.start()
+# osf_thread.start()

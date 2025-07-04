@@ -18,7 +18,7 @@ def read_float(i, d):
     return struct.unpack('f', d[i:i+4])[0], i+4
 
 
-def mouth_tracing_update_socket():
+def pymouth_update_socket():
     while True:
         data, addr = mouth_udp_socket.recvfrom(1024*2)
         
@@ -38,7 +38,7 @@ def mouth_tracing_update_socket():
         GetMouthData[5] = O
 
 
-def mouth_track_update_function(obj, st):
+def pymouth_update_function(obj, st):
     silence, a, i, u, e, o = GetMouthData
     silence = 1.0 - silence
     
@@ -98,5 +98,5 @@ def mouth_track_update_function(obj, st):
     return 0.0
 
 
-mouth_thread = threading.Thread(target=mouth_tracing_update_socket)
+mouth_thread = threading.Thread(target=pymouth_update_socket)
 # mouth_thread.start()

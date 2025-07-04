@@ -1,3 +1,4 @@
+tuple(renpy.gl2.live2d.states.get(('mao', )).old.common.model.parameters.keys())
 
 """
 ('ParamAngleX', '
